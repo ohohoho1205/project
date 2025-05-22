@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}錯誤{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h2 class="error-message">{{ message }}</h2>
+    <a href="javascript:history.back()" class="btn btn-primary m-2">返回前一頁</a>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary m-2">返回首頁</a>
+</div>
+{% endblock %}

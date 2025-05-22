@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}歡迎{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h2>歡迎，{{ username|add_stars }}！</h2>
+    <a href="{{ url_for('edit_profile', iid=iid) }}" class="btn btn-warning m-2">修改基本資料</a>
+    <form method="post" action="{{ url_for('delete', iid=iid) }}" style="display:inline;" onsubmit="return confirm('若刪除這個使用者，所有相關記錄將一併刪除，是否繼續？');">
+    <button type="submit" class="btn btn-danger m-2">刪除使用者</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary m-2">返回首頁</a>
+    </form>
+</div>
+{% endblock %}
